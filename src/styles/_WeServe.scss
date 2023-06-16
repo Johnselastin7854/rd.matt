@@ -1,0 +1,47 @@
+@use "./global" as *;
+
+.weServe {
+  padding: $section-padding;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: $alternate-color;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    .heading {
+      @include xsm {
+        font-size: 2rem;
+      }
+      span {
+        height: 2px;
+        margin-inline: auto;
+      }
+    }
+    p {
+      font-size: 1.3rem;
+      text-align: center;
+      @include md {
+        font-size: 1.5rem;
+      }
+
+      @include xsm {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  &__boxes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+}

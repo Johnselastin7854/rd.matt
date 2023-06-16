@@ -1,0 +1,22 @@
+@use "./global" as *;
+
+.form__control {
+  min-width: 400px;
+  max-width: 400px;
+  @include lg {
+    max-width: 275px;
+    min-width: 275px;
+  }
+
+  &--title {
+    color: $primaryColor;
+    text-transform: capitalize;
+    font-family: $font-body;
+  }
+
+  &--select {
+    padding: 1.3rem;
+    padding-bottom: 1rem !important;
+    border-radius: 5px;
+  }
+}

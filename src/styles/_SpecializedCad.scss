@@ -1,0 +1,70 @@
+@use "./global" as *;
+
+.specializedcard {
+  background-color: $alternate-color;
+  padding: 3rem;
+  width: 500px;
+  border-radius: 5px;
+  box-shadow: $card-shadow;
+  transition: $transition-2;
+
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+
+  @include xl {
+    width: 400px;
+  }
+  @include lg {
+    width: 550px;
+  }
+
+  @include sm {
+    width: 300px;
+  }
+
+  &:hover {
+    border: 1px solid $secondaryColor;
+    transform: scale(1.05);
+  }
+
+  img {
+    width: 6rem;
+    height: 6rem;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+
+    @include sm {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+  &__top {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+
+    &--title {
+      color: $primaryColor;
+      font-size: 2rem;
+      font-family: $font-heading;
+      text-transform: capitalize;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+
+      @include sm {
+        font-size: 1.7rem;
+      }
+    }
+
+    &--description {
+      font-size: 1.2rem;
+      line-height: 1.35;
+      letter-spacing: 1.5px;
+
+      @include sm {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

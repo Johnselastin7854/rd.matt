@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,900&display=swap");
+
+// Colors
+$primaryColor: #edede9;
+$navbar-bg: #023047;
+$sectionColor: #003049;
+$alternate-color: #001219;
+$colorDesc: #d6ccc2;
+$btnBg: #e76f51;
+$secondaryColor: #009688;
+$whiteColor: #fff;
+$cardBg: #f1faee;
+$cardHeadingColor: #002a5c;
+$spanColor: #e76f51;
+$dark: #000;
+
+// Font-family
+$font-heading: "Cormorant Garamond", serif;
+$font-body: "Poppins", sans-serif;
+
+// Font- Weight
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semiBold: 600;
+$font-weight-bold: 700;
+$font-weight-extraBold: 800;
+
+// Shadow
+$shadow-navbar: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+$shadow-sub-menu: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+  rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+  rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+$shadow-menu-mobile: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+  rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+$shadow-button: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+  rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+  rgba(0, 0, 0, 0.09) 0px 32px 16px;
+$card-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+// Transition
+$transition-1: all 0.3s ease-in-out;
+$transition-2: all 0.4s ease-in-out;
+
+// Font-size
+
+// Responsive Screen Sizes
+$xsm: 400px;
+$sm: 576px;
+$md: 768px;
+$md1: 830px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+///padding
+$section-padding: 5rem 4rem;
+
+// Gerneral Styling
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+  font-family: $font-body;
+}
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+button {
+  font-family: $font-body;
+  border: none;
+  outline: none;
+}
+ul {
+  list-style: none;
+}
+
+@keyframes moveToRight {
+  to {
+    transform: translateX(50px);
+  }
+}
+
+// Media Queries
+
+// Extra small devices
+@mixin xsm {
+  @media (max-width: ($xsm)) {
+    @content;
+  }
+}
+
+// Small Devices
+@mixin sm {
+  @media (max-width: ($sm)) {
+    @content;
+  }
+}
+
+// Medium Devices
+@mixin md {
+  @media (max-width: ($md)) {
+    @content;
+  }
+}
+
+@mixin md1 {
+  @media (max-width: ($md1)) {
+    @content;
+  }
+}
+
+// Large Devices
+@mixin lg {
+  @media (max-width: ($lg)) {
+    @content;
+  }
+}
+
+// Extral Large Devices
+@mixin xl {
+  @media (max-width: ($xl)) {
+    @content;
+  }
+}
+
+// 4K Display
+@mixin xxl {
+  @media (max-width: ($xxl)) {
+    @content;
+  }
+}
+.heading {
+  color: $primaryColor;
+  font-size: 3rem;
+  max-width: 600px;
+  font-family: $font-heading;
+  letter-spacing: 2px;
+  font-weight: $font-weight-semiBold;
+  text-transform: capitalize;
+}
+
+.section-description {
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  max-width: 675px;
+  font-weight: $font-weight-medium;
+  font-family: $font-body;
+  color: $colorDesc;
+}
+
+h2 {
+  font-family: $font-heading;
+
+  span {
+    display: block;
+    width: 100px;
+    height: 2px;
+    background-color: $spanColor;
+  }
+}
+p {
+  font-family: $font-body;
+  color: $colorDesc;
+}

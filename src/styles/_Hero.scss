@@ -1,0 +1,73 @@
+@use "./global" as *;
+
+.hero {
+    color: $primaryColor;
+    max-width: 100%;
+    padding: $section-padding;
+    overflow: hidden;
+    background-color: $sectionColor;
+  
+    &__container {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+  
+      @include md {
+        flex-direction: column;
+        text-align: center;
+      }
+  
+      &--content {
+        align-self: center;
+        flex: 1;
+  
+        &-title {
+          font-size: 4rem;
+          margin-bottom: 1rem;
+          font-weight: $font-weight-semiBold;
+          font-family: $font-heading;
+  
+          @include xl {
+            font-size: 3.5rem;
+          }
+  
+          @include lg {
+            font-size: 2rem;
+            margin-bottom: 0.7rem;
+          }
+        }
+  
+        &-desc {
+          font-size: 1.6rem;
+          color: $dark;
+          letter-spacing: 1px;
+          line-height: 1.8;
+          margin-bottom: 1.5rem;
+          max-width: 600px;
+          color: $colorDesc;
+  
+          @include xl {
+            font-size: 1.2rem;
+          }
+        }
+  
+        
+      }
+  
+      &--image {
+        flex: 1;
+  
+        img {
+          object-fit: contain;
+          width: 100%;
+          height: 300px;
+        }
+      }
+    }
+  
+    &__icon {
+      font-size: 1.5rem;
+      color: #fff;
+      transition: all 0.5s ease-in-out;
+    }
+  }

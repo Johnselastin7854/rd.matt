@@ -1,0 +1,130 @@
+@use "./global" as *;
+
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: none;
+
+  &__box {
+    width: 400px;
+    background-color: $cardBg;
+    box-shadow: $card-shadow;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: $transition-1;
+    cursor: pointer;
+
+    @include xl {
+      width: 300px;
+    }
+
+    @include lg {
+      width: 400px;
+    }
+
+    @include sm {
+      width: 250px;
+    }
+    @include xsm {
+      width: 200px;
+    }
+
+    &:hover {
+      transform: translateY(10px) scale(1.05);
+    }
+
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+    }
+
+    &-content {
+      padding: 1.5rem;
+
+      h4 {
+        color: $cardHeadingColor;
+        font-weight: 600;
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+        text-transform: capitalize;
+        letter-spacing: 1.5px;
+        font-family: $font-body;
+
+        @include xl {
+          font-size: 1.4rem;
+          text-align: left;
+        }
+
+        @include sm {
+          font-weight: 600;
+          font-size: 1.1rem;
+        }
+      }
+      p {
+        color: $dark;
+        font-size: 1.1rem;
+        letter-spacing: 2px;
+        line-height: 1.55;
+        font-family: $font-body;
+
+        @include xl {
+          font-size: 1rem;
+          line-height: 1.35;
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 3rem;
+    color: $btnBg;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &__left-arrow {
+    left: -80px;
+
+    @include xl {
+      left: -55px;
+    }
+
+    @include lg {
+      left: -70px;
+    }
+    @include xsm {
+      left: -50px;
+    }
+  }
+
+  &__right-arrow {
+    right: -80px;
+
+    @include xl {
+      right: -55px;
+    }
+    @include lg {
+      right: -70px;
+    }
+    @include xsm {
+      right: -50px;
+    }
+  }
+
+  .slide {
+    opacity: 0;
+    transition-duration: 1s ease;
+  }
+  .slide.active {
+    opacity: 1;
+    transition-duration: 1s;
+    transform: scale(1.08);
+  }
+}

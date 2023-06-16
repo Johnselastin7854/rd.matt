@@ -1,0 +1,124 @@
+@use "./global" as *;
+
+.howworks {
+  padding: $section-padding;
+  background-color: $sectionColor;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  h2 {
+    margin-inline: auto;
+    text-align: center;
+
+    @include sm {
+      font-size: 2rem;
+    }
+
+    span {
+      margin-inline: auto;
+    }
+  }
+  p {
+    text-align: center;
+    margin-inline: auto;
+    font-size: 1.3rem;
+
+    @include sm {
+      font-size: 1.1rem;
+    }
+  }
+
+  &__container {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+
+    &--works {
+      display: flex;
+      flex-direction: row;
+      padding: 2rem;
+      background-color: $alternate-color;
+      box-shadow: $card-shadow;
+      border-radius: 5px;
+      gap: 2rem;
+      align-items: center;
+      justify-content: space-between;
+      width: 900px;
+      height: 200px;
+      border: 1px solid $secondaryColor;
+
+      @include lg {
+        width: 650px;
+      }
+
+      @include md {
+        max-width: 500px;
+      }
+
+      @include sm {
+        max-width: 350px;
+        flex-direction: column;
+        height: auto;
+      }
+
+      @include xsm {
+        width: 300px;
+      }
+
+      &:nth-child(2n) {
+        align-self: end;
+
+        @include md {
+          align-self: center;
+        }
+      }
+      img {
+        width: 200px;
+        height: 150px;
+        object-fit: cover;
+        aspect-ratio: 1 / 1;
+        border-radius: 5px;
+      }
+
+      &-content {
+        max-width: 500px;
+
+        h3 {
+          font-size: 1.8rem;
+          letter-spacing: 1.3px;
+          color: $primaryColor;
+          font-family: $font-body;
+
+          @include lg {
+            font-size: 1.5rem;
+          }
+          span {
+            color: $spanColor;
+            font-weight: 700;
+            margin-right: 1rem;
+            font-size: 4rem;
+            font-family: $font-body;
+
+            @include lg {
+              font-size: 3.5rem;
+            }
+          }
+        }
+        p {
+          font-size: 1.3rem;
+          text-align: initial;
+          line-height: 1.45;
+          letter-spacing: 1.2px;
+
+          @include lg {
+            font-size: 1.1rem;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
+}

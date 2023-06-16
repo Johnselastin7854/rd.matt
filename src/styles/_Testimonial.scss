@@ -1,0 +1,89 @@
+@use "./global" as *;
+
+.testimonial {
+  padding: $section-padding;
+  background-color: $sectionColor;
+
+  h2 {
+    color: $primaryColor;
+    margin-inline: auto;
+    text-align: center;
+    margin-bottom: 2rem;
+
+    @include xsm{
+        font-size: 2rem;
+    }
+
+    span {
+      margin-inline: auto;
+    }
+  }
+
+  &__slider {
+    max-width: 500px;
+    background-color: $cardBg;
+    margin-inline: auto;
+    border-radius: 10px;
+
+    @include md{
+        max-width: 400px;
+    }
+    @include sm{
+        max-width: 400px;
+    }
+    @include xsm{
+        max-width: 300px;
+        min-width: 250px;
+    }
+
+    &--content {
+      padding: 2rem 3rem;
+      img {
+        width: 7rem;
+        height: 7rem;
+        border-radius: 50%;
+        margin-inline: auto;
+        border: 2px solid $spanColor;
+      }
+
+      .name {
+        color: $cardHeadingColor;
+        font-size: 1.6rem;
+        font-weight: 600;
+        text-align: center;
+        margin-block: 1rem;
+      }
+      .designation {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+        color: $alternate-color;
+        text-align: center;
+      }
+      .review {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 1rem;
+        line-height: 1.55;
+        letter-spacing: 1.2px;
+        font-size:1rem;
+        color:$dark;
+
+        span {
+         margin-block-start: 2rem;  
+         color: $secondaryColor;
+          font-weight: 600;
+          letter-spacing: 2px;
+          font-size: 1.5rem;
+          font-weight: 700;
+
+          @include xsm{
+            font-size: 1.2rem;
+          }
+          
+        }
+      }
+    }
+  }
+}

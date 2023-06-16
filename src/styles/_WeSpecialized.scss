@@ -1,0 +1,44 @@
+@use "./global" as *;
+.WeSpecialized {
+  padding: $section-padding;
+  background-color: $sectionColor;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  h2 {
+    margin-inline: auto;
+    text-align: center;
+
+    @include sm {
+      font-size: 2rem;
+    }
+
+    span {
+      margin-inline: auto;
+      width: 150px;
+
+      @include sm {
+        width: 100px;
+      }
+    }
+  }
+
+  p {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-inline: auto;
+    margin-bottom: 1rem;
+
+    @include sm {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__container {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

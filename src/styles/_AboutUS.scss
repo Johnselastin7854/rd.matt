@@ -1,0 +1,138 @@
+@use "./global" as *;
+
+.about {
+  padding: $section-padding;
+  background-color: $sectionColor;
+
+  h2 {
+    text-align: center;
+    margin-inline: auto;
+
+    @include sm {
+      font-size: 2rem;
+    }
+
+    span {
+      margin-top: -3px;
+      margin-inline: auto;
+    }
+  }
+
+  &__content-container {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    margin: 5rem 0 3rem;
+
+    @include lg {
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .about__image {
+      flex: 1;
+      img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        aspect-ratio: 1 / 1;
+        border-radius: 10px;
+
+        @include sm {
+          height: 300px;
+        }
+
+        @include xsm {
+          height: 250px;
+        }
+      }
+    }
+    .about__content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      //   justify-content: center;
+
+      &--btn {
+        align-self: start;
+        color: $primaryColor;
+        background-color: $spanColor;
+        border-radius: 50px;
+        padding: 1rem 2rem;
+        font-size: 2rem;
+        letter-spacing: 1.2px;
+        font-weight: 600;
+        font-family: $font-body;
+
+        @include md {
+          font-size: 1.7rem;
+        }
+
+        @include sm {
+          font-size: 1.4rem;
+        }
+      }
+      &--desc {
+        line-height: 1.65;
+        letter-spacing: 1.3px;
+        font-size: 1.7rem;
+
+        @include md {
+          font-size: 1.4rem;
+          line-height: 1.45;
+        }
+
+        @include xsm {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+
+  &__history {
+    padding: 5rem 0;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &--space {
+      background: $alternate-color;
+      min-width: 300px;
+      width: 350px;
+      padding: 3rem;
+      border-radius: 5px;
+      box-shadow: $card-shadow;
+      transition: $transition-1;
+
+      &:hover {
+        transform: translateY(-30px);
+      }
+
+      h4 {
+        font-size: 2rem;
+        color: $primaryColor;
+        letter-spacing: 1.2px;
+        font-family: $font-heading;
+
+        span {
+          display: block;
+          height: 2px;
+          background-color: $spanColor;
+          margin-top: 1.7px;
+          width: 60px;
+        }
+      }
+    }
+
+    p {
+      font-size: 1.3rem;
+      letter-spacing: 2px;
+      line-height: 1.25;
+      margin-top: 1.3rem;
+    }
+  }
+}

@@ -1,0 +1,72 @@
+@use "./global" as *;
+
+.service {
+  padding: $section-padding;
+  background-color: $alternate-color;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @include xl {
+    gap: 4rem;
+  }
+
+  h2 {
+    @include xsm {
+      font-size: 2rem;
+    }
+
+    @include lg {
+      text-align: center;
+      margin-inline: auto;
+    }
+    span {
+      @include lg {
+        margin-inline: auto;
+      }
+    }
+  }
+
+  &__container {
+    &--cards {
+      a {
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    &--button {
+      background-color: $btnBg;
+      color: $whiteColor;
+      border-radius: 0.5rem;
+      text-align: center;
+      text-transform: capitalize;
+      letter-spacing: 0.1rem;
+      font-size: 1.5rem;
+      padding: 1rem 2rem;
+      cursor: pointer;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      transition: $transition-1;
+      gap: 10px;
+
+      &:hover {
+        background-color: $whiteColor;
+        color: $btnBg;
+        box-shadow: $shadow-button;
+        letter-spacing: 3px;
+        transform: scale(1.05);
+      }
+
+      &:hover .hero__icon {
+        color: $btnBg;
+        transform: translateX(15px) rotate(450deg) scale(1.05);
+      }
+    }
+  }
+}

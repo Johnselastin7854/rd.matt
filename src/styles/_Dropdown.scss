@@ -1,0 +1,42 @@
+@use "./global" as *;
+
+.sub-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  li {
+    position: relative;
+
+    a {
+      color: $primaryColor;
+      font-size: 0.9rem;
+      padding: 0.9rem;
+      border-radius: 5px;
+      position: relative;
+      color: red;
+
+      @include xl {
+        font-size: 0.8rem;
+      }
+
+      &:hover {
+        background-color: $secondaryColor;
+        color: $whiteColor;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background-color: $secondaryColor;
+      margin-top: 0.5rem;
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+}

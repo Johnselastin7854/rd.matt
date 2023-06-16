@@ -1,0 +1,104 @@
+@use "./global" as *;
+
+.form {
+  padding: $section-padding;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: $alternate-color;
+  gap: 1rem;
+
+  h2 {
+    @include xsm {
+      font-size: 2rem;
+    }
+    span {
+      margin-top: 2px;
+      margin-inline: auto;
+    }
+  }
+  p {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  &__container--wrapper {
+    border: 1px solid $sectionColor;
+    padding: 3rem 0rem;
+    max-width: 1000px;
+    min-width: 350px;
+    border-radius: 5px;
+    box-shadow: $card-shadow;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-block: 3rem;
+
+    @include md {
+      gap: 5rem;
+    }
+  }
+
+  &__container {
+    display: flex;
+    gap: 1.5rem 3rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &--input {
+      flex: 1;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+
+    @include md {
+      margin-top: -2rem;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      background-color: $btnBg;
+      color: $whiteColor;
+      padding: 1rem 2rem;
+      border-radius: 5px;
+      gap: 1rem;
+      text-transform: capitalize;
+      font-size: 1.5rem;
+      max-width: 250px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: $transition-1;
+
+      @include md {
+        width: 100%;
+        justify-content: center;
+      }
+
+      &:hover {
+        background-color: $whiteColor;
+        color: $btnBg;
+        box-shadow: $shadow-button;
+        transform: scale(1.05);
+      }
+
+      .icon {
+        font-size: 1.5rem;
+      }
+
+      &:hover .icon {
+        transform: scale(1.05);
+      }
+    }
+  }
+}

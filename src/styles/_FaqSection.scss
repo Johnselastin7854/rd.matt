@@ -1,0 +1,57 @@
+@use "./global" as *;
+
+.faq__section {
+  padding: $section-padding;
+  display: flex;
+  flex-direction: column;
+  background-color: $sectionColor;
+  &--content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    .heading {
+      @include xsm {
+        font-size: 1.6rem;
+      }
+      span {
+        display: block;
+        width: 50%;
+        height: 2px;
+        background-color: $spanColor;
+        margin-top: 5px;
+        margin-inline: auto;
+      }
+    }
+
+    p {
+      font-size: 1.3rem;
+      text-align: center;
+
+      @include sm {
+        font-size: 1rem;
+      }
+
+      @include xsm {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  &--accordion-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+
+    @include lg {
+      flex-direction: column;
+      height: auto;
+      margin-top: 2rem;
+    }
+  }
+}

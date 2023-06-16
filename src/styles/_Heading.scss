@@ -1,0 +1,29 @@
+@use "./global" as *;
+.sub-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 5rem 4rem 0;
+  h2 {
+    text-align: center;
+    margin-inline: auto;
+
+    @include xsm {
+      font-size: 2rem;
+    }
+
+    span {
+      margin-inline: auto;
+      width: 50px;
+    }
+  }
+
+  p {
+    text-align: center;
+    margin-inline: auto;
+
+    @include xsm {
+      font-size: 1.2rem;
+    }
+  }
+}

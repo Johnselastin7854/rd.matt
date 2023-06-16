@@ -1,0 +1,156 @@
+@use "./global" as *;
+
+.nav{
+    height:8rem;
+    width: 100%;
+    background-color: $navbar-bg;
+    box-shadow: $shadow-navbar;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 4rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    &__logo{
+       display: flex;
+       align-items: center;
+       gap: 2rem;
+
+       @include sm{
+           gap: 1.5rem;
+
+       }
+
+       @include xsm{
+        flex-direction: column;
+       }
+
+       
+        img{
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            cursor: pointer;
+
+            @include sm{
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+            
+            @include xsm{
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+        }
+
+        a{
+            font-size: 2.5rem;
+            color: $primaryColor;
+            font-weight: $font-weight-bold;
+            font-family: $font-heading;
+
+            @include xl{
+                font-size: 2rem;
+            }
+
+            @include sm{
+                font-size: 1.7rem;
+                font-weight: $font-weight-medium;
+            }
+            @include xsm{
+                font-weight: $font-weight-normal;
+            }
+        }
+    }
+
+    &__menu{
+        display: flex;
+        gap: 2rem;
+
+        @include lg{
+           flex-direction: column;
+           padding:2rem;
+           max-width:250px;
+           min-width:210px;
+           
+        }
+        
+        li{
+            cursor: pointer;
+
+            a{
+                font-size: 1.5rem;
+                color: $primaryColor;
+                font-weight: $font-weight-medium;
+                display: flex;
+                align-items: center;
+                gap: 0.8rem;
+                position: relative;
+
+                .sub__menu{
+                    width: 250px;
+                    height: auto;
+                    background-color: $navbar-bg;
+                    padding: 1rem;
+                    border-radius: 5px;
+                    position: absolute;
+                    top: 25px;
+                    left: -90px;
+                    z-index: 99;
+                    box-shadow: $shadow-sub-menu;
+                    
+                    @include lg{
+                        max-width:250px;
+                        top: 5px;
+                        left: -250px;
+                        overflow-y: scroll;
+                    }
+                    
+                    @include sm{
+                        left: -100px;
+                        top: 18px;
+                    }
+                }
+            }
+
+        }
+    }
+
+    &__menu--desktop{
+
+        @include lg{
+            display: none;
+        }
+    }
+
+    &__icon{
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    &__mobile--menu{
+        color: $primaryColor;
+        font-size: 1.5rem;
+        display: none;
+        position: relative;
+
+        @include lg{
+            display: block;
+        }
+
+        &-container{
+            position: absolute;
+            background-color: $whiteColor;
+            right: -35px;
+            top: 55px;
+            border-radius: 10px;
+            justify-self: start;
+            box-shadow: $shadow-menu-mobile;
+            max-width: 300px;
+        }
+    }
+}
+
